@@ -23,7 +23,7 @@ namespace Plazza
             {
                 this->_thread = std::thread(function);
                 this->_status = Plazza::RUNNING;
-            }
+            };
 
             template<typename ... Targs>
             Thread(T (*function)(Targs... args), Targs... args)
