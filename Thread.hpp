@@ -9,7 +9,6 @@
 #define THREAD_HPP_
 
 #include <memory>
-#include <functional>
 #include <iostream>
 #include "IThread.hpp"
 #include "Mutex.hpp"
