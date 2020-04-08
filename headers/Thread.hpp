@@ -30,7 +30,10 @@ namespace Plazza
                 this->_thread = std::thread(function, args...);
             };
 
-            ~Thread() = default;
+            ~Thread()
+            {
+                this->Wait();
+            }
 
         public:
             void Wait()
@@ -43,6 +46,7 @@ namespace Plazza
 
         public:
             inline const std::thread& GetThread() const { return this->_thread; };
+            inline const bool Joinable() const { return this->_thread.joinable(); };
 
         private:
            std::thread _thread;

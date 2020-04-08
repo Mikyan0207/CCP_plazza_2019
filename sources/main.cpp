@@ -16,6 +16,12 @@ int main(void)
 {
     Plazza::Thread thread(test, 10, 10);
 
-    thread.Wait();
+    if (thread.Joinable())
+        thread.Wait();
+
+    if (thread.Joinable())
+        std::cout << "Running" << std::endl;
+    else
+        std::cout << "Dead" << std::endl;
     return 0;
 }
