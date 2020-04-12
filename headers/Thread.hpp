@@ -22,29 +22,35 @@ namespace Plazza
             Thread(T (*function)())
             {
                 this->_thread = std::thread(function);
-                this->_status = Plazza::RUNNING;
-            }
+            };
 
             template<typename ... Targs>
             Thread(T (*function)(Targs... args), Targs... args)
             {
                 this->_thread = std::thread(function, args...);
-                this->_status = Plazza::RUNNING;
             };
-            ~Thread();
+
+            ~Thread()
+            {
+                this->Wait();
+            }
 
         public:
-            void Start();
-            void Wait();
-            void Stop();
+            void Wait()
+            {
+                if (this->_thread.joinable())
+                {
+                    this->_thread.join();
+                }
+            };
 
         public:
             inline const std::thread& GetThread() const { return this->_thread; };
+            inline const bool Joinable() const { return this->_thread.joinable(); };
 
         private:
            std::thread _thread;
            Mutex _mutex;
-           ThreadStatus _status;
     };
 }
 

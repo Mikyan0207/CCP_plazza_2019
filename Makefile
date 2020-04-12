@@ -7,13 +7,13 @@
 
 CC = g++ -std=c++17
 
-CFLAGS = -pthread
+CFLAGS = -pthread -I./headers
 
 LIB = -lpthread
 
 NAME = plazza
 
-SRC = $(wildcard *.cpp)
+SRC = $(wildcard sources/*.cpp)
 
 OBJ = $(SRC:.cpp=.o)
 
