@@ -19,7 +19,7 @@ There are 4 types of pizzas :
   - americana (baked in `2 * a * pizza_size` seconds) made with `doe, tomato, gruyere, steak`
   - fantasia (baked in `4 * a * pizza_size` seconds) made with `doe, tomato, eggplant, goat cheese, chief love`
 
-Each kitchen has a maximum of 5 for each ingredient, which are shared between cooks.
+Each **kitchen** has a maximum of 5 for each ingredient, which are shared between **cooks**.
 
 ### How to use it
 
@@ -27,7 +27,7 @@ Use the `make` instruction to compile the project.
 
 Use the following commandline : `./plazza a b c`  
   - **a** being the cooking time multiplier for pizzas.  
-  - **b** being the number of cooks per kitchen (must be an integer since it would not be very hygienic to have parts of a body inside the kitchens :smile:).  
+  - **b** being the number of **cooks** per **kitchen** (must be an integer since it would not be very hygienic to have parts of a body inside the kitchens :smile:).  
   - **c** being the time in milliseconds needed by a kitchen to replace an ingredient.  
 
 To place an order you MUST use the following syntax : `TYPE SIZE xNUMBER`.  
