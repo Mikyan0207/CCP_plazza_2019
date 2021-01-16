@@ -29,3 +29,7 @@ Use the following commandline : `./plazza a b c`
   - **a** being the cooking time multiplier for pizzas.  
   - **b** being the number of cooks per kitchen (must be an integer since it would not be very hygienic to have parts of a body inside the kitchens :smile:).  
   - **c** being the time in milliseconds needed by a kitchen to replace an ingredient.  
+
+To place an order you MUST use the following syntax : `TYPE SIZE xNUMBER`.  
+Orders can be separated by semicolons. Example : `regina XXL x2 ; fantasia M x3 ; margarita S x1`.  
+You may want to use the `status` command to display the status of each kitchen in activity.
